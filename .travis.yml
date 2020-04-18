@@ -1,0 +1,9 @@
+language: cpp
+os:
+  - linux
+  - windows
+script:
+  - mkdir build && cd build
+  - cmake ..
+  - cmake --build .
+  - ctest -C debug

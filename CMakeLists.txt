@@ -10,7 +10,8 @@ option(T "Enable testing or not" ON)
 enable_testing()
 
 if (T)
-    if(WIN32)
+
+    if(WIN32)   # Need to force googletest link dynamically
         message(STATUS "Google Test has been set to link dynamically.")
         SET(gtest_force_shared_crt ON CACHE BOOL "" FORCE)
     else(WIN32) # if Linux, check C++11
@@ -22,12 +23,6 @@ if (T)
             message(FATAL_ERROR "Your compiler does not support C++11 standard. This is required if compile the test cases.")
         endif(CXX11)
     endif(WIN32)
-
-    if()
-        
-    endif()
-    
-    
 
     add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/googletest
                     ${CMAKE_CURRENT_SOURCE_DIR}/googletest/build

@@ -1,4 +1,4 @@
-# PhDStillNeedLeetCode
+# PhDStillNeedLeetCode [![Build Status](https://travis-ci.com/DavyVan/PhDStillNeedLeetCode.svg?branch=master)](https://travis-ci.com/DavyVan/PhDStillNeedLeetCode)
 
 Finally...it's my turn...
 

@@ -1,0 +1,1 @@
+bool isValid(char * s);

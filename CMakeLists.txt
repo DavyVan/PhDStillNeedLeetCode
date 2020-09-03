@@ -10,7 +10,7 @@ option(T "Enable testing or not" ON)
 enable_testing()
 
 if (T)
-
+    message(STATUS "Testing is enabled.")
     if(WIN32)   # Need to force googletest link dynamically
         message(STATUS "Google Test has been set to link dynamically.")
         SET(gtest_force_shared_crt ON CACHE BOOL "" FORCE)

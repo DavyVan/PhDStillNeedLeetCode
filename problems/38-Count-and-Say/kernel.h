@@ -1,0 +1,1 @@
+char * countAndSay(int n);

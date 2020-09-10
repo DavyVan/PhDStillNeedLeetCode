@@ -1,5 +1,6 @@
 #include "kernel.h"
 #include <stdlib.h>
+#include <limits.h>
 
 int maxSubArray(int* nums, int numsSize)
 {

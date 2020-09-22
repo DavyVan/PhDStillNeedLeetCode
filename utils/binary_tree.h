@@ -1,0 +1,79 @@
+#ifndef __BINARY_TREE__
+#define __BINARY_TREE__
+
+#include <vector>
+#include <queue>
+#include <stdlib.h>
+
+using namespace std;
+
+// Definition for a binary tree node.
+struct TreeNode {
+    int val;
+    struct TreeNode *left;
+    struct TreeNode *right;
+};
+
+/* ------------------ The code below is written in pure C++ (for convenience) ----------------- */
+
+class BinaryTree
+{
+private:
+    // internal state
+    vector<TreeNode*> nodes;
+    queue<TreeNode*> level_order_queue;
+public:
+    BinaryTree(){}
+
+    void free_nodes()
+    {
+        for (vector<TreeNode*>::iterator it = nodes.begin(); it < nodes.end(); it++)
+            free(*it);
+    }
+
+    ~BinaryTree()
+    {
+        free_nodes();
+    }
+
+    TreeNode* create_node(int val, TreeNode *left = nullptr, TreeNode *right = nullptr)
+    {
+        if (val == -1)
+            return nullptr;
+        
+        TreeNode *t = (TreeNode*) malloc(sizeof(TreeNode));
+        t->val = val;
+        t->left = left;
+        t->right = right;
+        nodes.push_back(t);
+        return t;
+    }
+
+    TreeNode* construct_from_level_order_array(int *level_order_array, int length)
+    {
+        // root
+        TreeNode *root = create_node(level_order_array[0]);
+        level_order_queue.push(root);
+
+        for (int i = 1; i < length; i++)
+        {
+            TreeNode *current = level_order_queue.front();
+            if (i % 2 == 1)     // if left
+            {
+                current->left = create_node(level_order_array[i]);
+                level_order_queue.push(current->left);
+            }
+            else
+            {
+                // if right
+                current->right = create_node(level_order_array[i]);
+                level_order_queue.push(current->right);
+                level_order_queue.pop();
+            }
+            
+        }
+        return root;
+    }
+};
+
+#endif  // __BINARY_TREE__

@@ -28,3 +28,9 @@ mkdir build && cd build
 cmake -DQ=<problem number on LeetCode> .. && cmake --build . --target install
 ```
 Then only one binary file will go to `./bin`  
+
+# How to Run
+Each problem has a main function with a infinite while-loop. You can just input data as prompted and input `EOF` when you finish to exit elegantly (of course `Ctrl-C` is also a good and fast way to terminate).
+
+# Utility libraries can be used elsewhere
+* `utils/binary_tree.h` - includes binary tree node definition and tree construction functions take different format as input so that you do not need to define it by yourself and write test cases faster.

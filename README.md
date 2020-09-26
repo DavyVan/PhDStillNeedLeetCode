@@ -34,3 +34,6 @@ Each problem has a main function with a infinite while-loop. You can just input 
 
 # Utility libraries can be used elsewhere
 * `utils/binary_tree.h` - includes binary tree node definition and tree construction functions take different format as input so that you do not need to define it by yourself and write test cases faster.
+
+## How to input a binary tree?
+The way to input a binary tree is almost identical to the way on LeetCode except that you need to use the integer `-1` instead of `null` to represent a empty tree node.

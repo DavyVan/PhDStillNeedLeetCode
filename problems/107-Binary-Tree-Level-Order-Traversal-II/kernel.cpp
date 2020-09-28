@@ -1,5 +1,6 @@
 #include "kernel.h"
 #include <queue>
+#include <algorithm>
 
 
 vector<vector<int>> Solution::levelOrderBottom(TreeNode* root)

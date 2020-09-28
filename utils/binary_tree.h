@@ -74,6 +74,26 @@ public:
         }
         return root;
     }
+
+    static void print_level_order(TreeNode *root)
+    {
+        queue<TreeNode*> level_order_queue;
+        level_order_queue.push(root);
+        while (!level_order_queue.empty())
+        {
+            TreeNode *current = level_order_queue.front();
+            if (current == nullptr)
+                printf("null, ");
+            else
+            {
+                printf("%d, ", current->val);
+                level_order_queue.push(current->left);
+                level_order_queue.push(current->right);
+            }
+            level_order_queue.pop();
+        }
+        printf("\n");
+    }
 };
 
 #endif  // __BINARY_TREE__

@@ -59,16 +59,19 @@ public:
         for (int i = 1; i < length; i++)
         {
             TreeNode *current = level_order_queue.front();
+
             if (i % 2 == 1)     // if left
             {
                 current->left = create_node(level_order_array[i]);
-                level_order_queue.push(current->left);
+                if (current->left != nullptr)
+                    level_order_queue.push(current->left);
             }
             else
             {
                 // if right
                 current->right = create_node(level_order_array[i]);
-                level_order_queue.push(current->right);
+                if (current->right != nullptr)
+                    level_order_queue.push(current->right);
                 level_order_queue.pop();
             }
             

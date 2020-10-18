@@ -70,6 +70,11 @@ class LinkedList
     {
         (*(nodes.end()-1))->next = nodes[pos];
     }
+
+    ListNode* get(int index)
+    {
+        return nodes[index];
+    }
 };
 
 #endif

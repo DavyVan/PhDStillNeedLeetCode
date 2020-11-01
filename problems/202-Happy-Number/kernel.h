@@ -1,0 +1,1 @@
+bool isHappy(int n);

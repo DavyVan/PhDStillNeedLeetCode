@@ -1,5 +1,6 @@
 #include "kernel.h"
 #include <stdlib.h>
+#define __STDC_WANT_LIB_EXT1__
 #include <stdio.h>
 #include <string.h>
 

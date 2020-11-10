@@ -10,11 +10,11 @@ void normalize(char* in, char** out)
     
     // allocate out
     int len = 0;
-    for (; in[len] != '\0'; len++);
+    for (; in[len] != '\0' && in[len] != '\n'; len++);
     *out = (char*) malloc(sizeof(char) * (len+1));
     memset(*out, 0, len+1);
 
-    for (int i = 0; in[i] != '\0'; i++)
+    for (int i = 0; in[i] != '\0' && in[i] != '\n'; i++)
     {
         if (map[in[i]] == 0)
             map[in[i]] = next++;

@@ -1,5 +1,5 @@
 #include "kernel.h"
-#include <intrin.h>
+#include <immintrin.h>
 
 bool isPowerOfTwo(int n)
 {

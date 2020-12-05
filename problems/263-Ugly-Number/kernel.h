@@ -1,0 +1,1 @@
+bool isUgly(int num);

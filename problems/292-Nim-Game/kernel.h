@@ -1,0 +1,1 @@
+bool canWinNim(int n);

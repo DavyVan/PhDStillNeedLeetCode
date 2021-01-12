@@ -1,0 +1,1 @@
+int firstUniqChar(char * s);

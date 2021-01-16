@@ -1,5 +1,6 @@
 #include "kernel.h"
 #include <limits.h>
+#include <stdlib.h>
 
 int firstUniqChar(char * s)
 {

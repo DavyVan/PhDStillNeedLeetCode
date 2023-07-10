@@ -8,8 +8,9 @@ Please see `./problems` for full list of solved problems.
 # How to Build
 
 ## Prerequisites
-* CMake 3.10 or later
-* C++ compiler supports C++11
+* CMake 3.25 or later
+* C++ compiler supports C++14
+* GoogleTest 1.11+
 
 ## Build Steps
 

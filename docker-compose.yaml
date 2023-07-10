@@ -1,0 +1,14 @@
+name: leetcode
+services:
+  main:
+    image: affqqa/gcc13-cmake3.25:latest
+    entrypoint:
+      - sleep
+      - infinity
+    volumes:
+      - .:/PhDStillNeedLeetCode:rw
+    init: true
+    deploy:
+      resources:
+        limits:
+          cpus: "2"

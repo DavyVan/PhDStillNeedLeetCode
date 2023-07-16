@@ -10,9 +10,9 @@ bool input_vector(vector<T>& container) {
     // clean the container anyway
     container.clear();
     
-    try {
-        int size;
+    int size;
 
+    try {
         cout << "Input vector size:" << endl;
         cin >> size;
         container.resize(size);
@@ -21,7 +21,32 @@ bool input_vector(vector<T>& container) {
         for (int i = 0; i < size; i++) {
             cin >> container[i];
         }
-    } catch(...) {
+    } catch (...) {
+        return false;
+    }
+    return true;
+}
+
+template<typename T>
+bool input_matrix(vector<vector<T>>& container) {
+    // clean first
+    container.clear();
+
+    int row, col;
+    
+    try {
+        cout << "Input matrix row and col: " << endl;
+        cin >> row >> col;
+        container.resize(row);
+
+        cout << "Input matrix elements, separate by space, row first order: " << endl;
+        for (int r = 0; r < row; r++) {
+            container[r].resize(col);
+            for (int c = 0; c < col; c++) {
+                cin >> container[r][c];
+            }
+        }
+    } catch (...) {
         return false;
     }
     return true;

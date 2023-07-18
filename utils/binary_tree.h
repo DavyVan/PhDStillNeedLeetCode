@@ -6,6 +6,7 @@
 #include <cstdlib>
 #include <cstdio>
 #include <iostream>
+#include <sstream>
 
 using namespace std;
 
@@ -94,12 +95,12 @@ public:
      * @param prompt 
      * @return TreeNode* The root.
      */
-    static BinaryTree* input_and_construct(string prompt) {
+    static BinaryTree* input_and_construct(string prompt, istream& in = cin) {
         cout << prompt << endl;
 
         cout << "Input the size:" << endl;
         int size;
-        cin >> size;
+        in >> size;
 
         // handle size == 0
         if (size == 0)
@@ -110,7 +111,7 @@ public:
         int *nodes = (int*) malloc(sizeof(int) * size);
         cout << "Input the nodes:" << endl;
         for (int i = 0; i < size; i++) {
-            cin >> nodes[i];
+            in >> nodes[i];
         }
 
         BinaryTree* ret = new BinaryTree();

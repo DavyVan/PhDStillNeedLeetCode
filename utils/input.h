@@ -52,5 +52,31 @@ bool input_matrix(vector<vector<T>>& container) {
     return true;
 }
 
+template<typename T>
+bool input_triangle(vector<vector<T>>& container) {
+    // clear
+    container.clear();
+
+    int n;
+
+    try {
+        cout << "Input triangle height: " << endl;
+        cin >> n;
+        container.resize(n);
+
+        cout << "Input triangle elements..." << endl;
+        for (int i = 1; i <= n; i++) {
+            cout << "The " << i << "-th row (" << i << " elements): " << endl;
+            container[i-1].resize(i);
+            for (int j = 0; j < i; j++) {
+                cin >> container[i-1][j];
+            }
+        }
+    } catch (...) {
+        return false;
+    }
+    return true;
+}
+
 
 #endif //__UTILS_INPUT_H__
